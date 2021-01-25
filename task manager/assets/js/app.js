@@ -2,6 +2,7 @@
 
  const taskInput = document.querySelector('#task');               //the task input text field
 
+ 
  const form = document.querySelector('#task-form');             //The form at the top
  
  const filter = document.querySelector('#filter');                      //the task filter text field
@@ -25,7 +26,6 @@ filter.addEventListener('keyup', filterTasks);
 // Remove task event [event delegation]
 taskList.addEventListener('click', removeTask);
 
-//the reload button at the top right of navigation
    
 
 
@@ -86,9 +86,17 @@ function clearAllTasks() {
 // Filter tasks function definition 
 function filterTasks(e) {
    
+    let searchItem = filter.value;
+    let collectionItems = document.querySelectorAll(".collection-item");
+    collectionItems.forEach((item) => {
+      if (item.textContent.indexOf(searchItem)) {
+        item.style.display = "none";
+      } else {
+        item.style.display = "block";
+      }
+    });
 
-
-    console.log("Task Filter ...");
+    // console.log("Task Filter ...");
 
 }
  
@@ -112,6 +120,7 @@ function reloadPage() {
     //using the reload fun on location object 
     location.reload();
 }
+
 
 
 
