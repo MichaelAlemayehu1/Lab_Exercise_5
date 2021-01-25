@@ -1,0 +1,17 @@
+#calc{
+    height:400px;
+    width: 500px;
+    border:solid 2px;
+    
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#text-area{
+    border:solid 2px;
+    height: 5rem;
+}

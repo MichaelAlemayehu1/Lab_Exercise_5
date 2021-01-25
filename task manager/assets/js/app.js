@@ -41,6 +41,7 @@ reloadIcon.addEventListener('click', reloadPage);
 
 // Add New  Task Function definition 
 function addNewTask(e) {
+    e.preventDefault();
     if (taskInput.value === '') 
 
     {
@@ -68,7 +69,7 @@ function addNewTask(e) {
 
     // alert("Add New Task ....");
 
-    e.preventDefault(); //disable form submission
+     //disable form submission
 }
 
 // Clear Task Function definition 

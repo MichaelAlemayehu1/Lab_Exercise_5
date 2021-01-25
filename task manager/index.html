@@ -56,14 +56,27 @@
 
                     </div>
                 </div>
+               
                 <div class="card-action">
+                    <a class="dropdown-trigger btn right #000000 black" href="#" data-target="dropdown1" 
+                    >Sort By</a
+                  >
+      
+                  <!-- Dropdown -->
+                  <ul id="dropdown1" class="dropdown-content">
+                    <li class="#000000 black"><a href="#!" class="sortAsc ">Ascending</a></li>
+                    <li class="#000000 black"><a href="#!" class="sortDesc">Descending</a></li>
+                  </ul>
                     <h5 id="task-title">List of Tasks</h5>
                     <div class="input-field col s12">
+                        
                         <input type="search" name="filter" id="filter">
                         <label for="filter">Search</label>
+                        
                     </div>
+                  
                     <ul class="collection">
-                        <!-- Here is the task list goes  -->
+                        
                     </ul>
                     <a href="#" class="clear-tasks btn red">Clear All Task</a>
                 </div>
@@ -76,14 +89,15 @@
 
 
 
-
-
+ 
     <!-- Jquery Compiled and minified JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <!-- Materialize Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Our Own Js  -->
+    <script src="assets/js/dropdown.js"></script>
     <script src="assets/js/app.js"></script>
+     
 </body>
 
 </html>
