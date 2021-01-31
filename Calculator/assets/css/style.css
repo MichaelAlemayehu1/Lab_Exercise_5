@@ -1,4 +1,4 @@
-#calc{
+/* #calc{
     height:60%;
     width: 40%;
     border:solid 2px;
@@ -42,4 +42,28 @@ body{
 #equalcon{
     margin-left: -1rem;
    
+} */
+
+#calc{
+    border: solid 1px;
+    max-width: 600px;
+    max-height: 600px;
+}
+
+
+
+#text-area{
+    border:solid 3px;
+}
+#number{
+    border: solid red;
+   
+    
+}
+.btn{
+    padding: 25px;
+    margin: 3px;
+}
+#equalcon{
+    
 }
