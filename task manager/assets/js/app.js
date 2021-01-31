@@ -12,6 +12,12 @@
  const clearBtn = document.querySelector('.clear-tasks');      //the all task clear button
 
  const reloadIcon = document.querySelector('.fa');
+
+ const Ascending = document.querySelector('#asc');
+
+ const Descending = document.querySelector('#desc');
+ 
+ 
   // Add Event Listener  [Form , clearBtn and filter search input ]
 
 // form submit 
@@ -25,6 +31,10 @@ filter.addEventListener('keyup', filterTasks);
 
 // Remove task event [event delegation]
 taskList.addEventListener('click', removeTask);
+
+ Ascending.addEventListener('click', sortAsc);
+Descending.addEventListener('click', sortDesc);
+
 
    
 
@@ -61,10 +71,41 @@ function addNewTask(e) {
      // Add class and the x marker for a 
      link.className = 'delete-item secondary-content';
      link.innerHTML = '<i class="fa fa-remove"></i>';
+     
      // Append link to li
      li.appendChild(link);
+
+     const divDate = document.createElement("div");
+     divDate.className = "div-date";
+     divDate.style.display = "block";
+   
+     let today = new Date();
+   
+     const dateText = document.createTextNode(
+       today.getFullYear() +
+         "-" +
+         today.getMonth() +
+         "-" +
+         today.getDate() +
+         " " +
+         today.getHours() +
+         ":" +
+         today.getMinutes() +
+         ":" +
+         today.getSeconds() +
+         ":" +
+         today.getMilliseconds()
+     );
+     divDate.appendChild(dateText);
+
+     
+     li.appendChild(divDate);
+     
+
      // Append to ul 
      taskList.appendChild(li);
+     
+     
     //  taskList.removeChild(li);
 
     // alert("Add New Task ....");
@@ -122,7 +163,52 @@ function reloadPage() {
     location.reload();
 }
 
+function descSort(arr) {
+    var len = arr.length;
+    for (var i = len - 1; i >= 0; i--) {
+      for (var j = 1; j <= i; j++) {
+        if (arr[j - 1].innerText < arr[j].innerText) {
+          var temp = arr[j - 1];
+          arr[j - 1] = arr[j];
+          arr[j] = temp;
+        }
+      }
+    }
+    return arr;
+  }
+  function sortDesc() {
+    const divDate = document.querySelectorAll(".div-date");
+    const taskDates = Array.from(divDate);
+    const dates = descSort(taskDates);
+    taskList.innerHTML = "";
+    dates.forEach((date) => {
+      taskList.appendChild(date.parentElement);
+    });
+  }
 
+  
 
+function sortAsc(){
+  const divDate = document.querySelectorAll(".div-date");
+  const taskDates = Array.from(divDate);
+  const dates = ascSort(taskDates);
+  taskList.innerHTML=""
+  dates.forEach((date)=>{
+    taskList.appendChild(date.parentElement);
+  });
+ }
 
+function ascSort(arr) {
+  var len = arr.length;
+  for (var i = len - 1; i >= 0; i--) {
+    for (var j = 1; j <= i; j++) {
+      if (arr[j - 1].innerText > arr[j].innerText) {
+        var temp = arr[j - 1];
+        arr[j - 1] = arr[j];
+        arr[j] = temp;
+      }
+    }
+  }
+  return arr;
+}
 

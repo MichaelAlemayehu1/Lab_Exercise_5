@@ -1,6 +1,6 @@
 #calc{
-    height:400px;
-    width: 500px;
+    height:60%;
+    width: 40%;
     border:solid 2px;
     
 }
@@ -14,4 +14,32 @@ body{
 #text-area{
     border:solid 2px;
     height: 5rem;
+}
+
+#number{
+    
+   
+   
+}
+
+.btn{
+    height: 4rem;
+    width: 4rem;
+    margin: 0.1rem;
+    border: 1px solid;
+
+}
+
+#button{
+    margin-left: -2rem;
+    
+}
+
+#equals{
+    border: 1px solid;
+}
+
+#equalcon{
+    margin-left: -1rem;
+   
 }
